@@ -7,6 +7,7 @@ const { Pool } = require('pg');
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '20mb' }));
+require('./demenagement')(app); // inactif sauf si REDIRECT_TO est défini (ancien service)
 app.use(express.static('.'));
 
 // ─── POSTGRESQL ───────────────────────────────────────────────────────────────
